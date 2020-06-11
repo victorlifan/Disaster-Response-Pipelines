@@ -1,6 +1,16 @@
-# Disaster Response Pipeline Project
+## Project Details
+Below are additional details about each component.
 
-### Instructions:
+
+### File structure
+![Alt text](https://github.com/victorlifan/Disaster-Response-Pipelines/blob/master/screenshots/structure.png?raw=true)
+
+### Python Scripts:
+
+After I completed the notebooks for the ETL and machine learning pipeline, I transferred codes into Python scripts, `process_data.py` and `train_classifier.py`. These Python scripts is able to run with additional arguments specifying the files used for the data and model.
+
+### Running the Web App
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
