@@ -1,6 +1,7 @@
 ## Project Title
 Disaster Response Pipelines (ETL, NLP, ML pipeline project)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## by Fan Li
 
 ## Date created
