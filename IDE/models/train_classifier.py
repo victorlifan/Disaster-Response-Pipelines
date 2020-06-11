@@ -3,6 +3,7 @@ import re
 import pickle
 import pandas as pd
 import numpy as np
+import nltk
 from sqlalchemy import create_engine
 from nltk import word_tokenize,sent_tokenize
 from nltk import pos_tag
@@ -16,6 +17,7 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer,TfidfVectorizer
+nltk.download('stopwords')
 
 def load_data(database_filepath):
     '''
@@ -30,7 +32,7 @@ def load_data(database_filepath):
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('InsertTableName',engine)
     X = df['message']
-    Y = df.drop('message',axis=1)
+    Y = df.iloc[:,4:]
     return X, Y, list(Y)
 
 def tokenize(text):

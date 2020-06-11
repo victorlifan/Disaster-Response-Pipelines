@@ -55,7 +55,6 @@ def clean_data(df):
     # replace 2 with 0 in related column
     df['related'].replace(2,0,inplace=True)
     # drop unrelated columns
-    df.drop(['original','id','genre'], axis=1, inplace=True)
     return df
 
 def save_data(df, database_filename):
