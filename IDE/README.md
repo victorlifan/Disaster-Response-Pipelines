@@ -3,7 +3,7 @@ Below are additional details about each component.
 
 
 ### File structure
-![Alt text](https://github.com/victorlifan/Disaster-Response-Pipelines/blob/master/screenshots/structure.png?raw=true)
+<img src="https://github.com/victorlifan/Disaster-Response-Pipelines/raw/master/screenshots/structure.png" width=500px>
 
 ### Python Scripts:
 
