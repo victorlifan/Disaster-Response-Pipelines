@@ -8,7 +8,7 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
-from sklearn.externals import joblib
+import joblib
 from sqlalchemy import create_engine
 
 from train_classifier import StartingVerbExtractor
@@ -44,9 +44,15 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
 
+    # my plot prep
+    countpercat=df.iloc[:,4:].sum().sort_values()[::-1]
+    catg_counts = countpercat.values
+    catg_names = countpercat.index
+
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
+        # example plot
         {
             'data': [
                 Bar(
@@ -62,6 +68,27 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+
+        # my plot
+        {
+            'data':[
+                Bar(
+                    y=catg_counts,
+                    x=catg_names
+                )
+            ],
+
+            'layout':{
+                'title': 'Distribution of Disaster Categories',
+                'yaxis': {
+                    'title': 'Count'
+                },
+                'xaxis':{
+                    'title': 'Disaster',
+                    'tickangle': 45
                 }
             }
         }
