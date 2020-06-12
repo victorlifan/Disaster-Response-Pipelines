@@ -114,7 +114,7 @@ def build_model():
     # GridSearchCV
     parameters={'multiclfada__estimator__base_estimator':[DecisionTreeClassifier(max_depth=1),DecisionTreeClassifier(max_depth=2)],
             'multiclfada__estimator__n_estimators':[500],
-            'multiclfada__estimator__learning_rate':[.1,.2]}
+            'multiclfada__estimator__learning_rate':[.2]}
     cv2 = GridSearchCV(pipeline2,parameters)
     return cv2
 
