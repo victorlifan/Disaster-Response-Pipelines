@@ -14,8 +14,8 @@ Project is created on Jun 11 2020.
 	2. [ML Pipeline](#ML)
 	3. [Flask Web App](#Flask)
 3. [Dataset](#Dataset)
-4. [Summary of Findings](#summary)
-5. [About](#About)
+4. [Summary of Project](#summary)
+5. [Files](#About)
 6. [Software used](#Software)
 
 
@@ -68,14 +68,14 @@ A Flask web app.
 * `messages.csv`: id, translated messages, original messages and message genre
 
 <a name="summary"></a>
-## Summary of Findings
+## Summary of Project
 
 1. From the 'DIstribution of Message Genres' we can tell `news` has the most records.
 2. From the 'Distribution of Disaster Categories' we can tell `aid_related` has the most records
 3. The web app can display a multi-classification outcome based on the trained ML model by given any text message. The outcome suggests what are the disaster categories the text might be indicating.
 
 <a name="About"></a>
-## About
+## Files In The Repository
 + [`Jupyter Notebook file`](https://github.com/victorlifan/Disaster-Response-Pipelines/tree/master/Jupyter%20Notebook%20file): a folder contains datasets and ipynb files where wrangling process and raw pipelines were developed.
 + [`IDE`](https://github.com/victorlifan/Disaster-Response-Pipelines/tree/master/IDE): a folder contains datasets and modularized py files to support flask web app
 + [`screenshots`](https://github.com/victorlifan/Disaster-Response-Pipelines/tree/master/screenshots): png files were displayed in READMEs

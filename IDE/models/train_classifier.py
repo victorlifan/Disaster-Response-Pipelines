@@ -9,6 +9,7 @@ from nltk import word_tokenize,sent_tokenize
 from nltk import pos_tag
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.pipeline import Pipeline,FeatureUnion
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report
@@ -109,7 +110,13 @@ def build_model():
     ])),
     ('multiclfada',MultiOutputClassifier(AdaBoostClassifier()))
     ])
-    return pipeline2
+
+    # GridSearchCV
+    parameters={'multiclfada__estimator__base_estimator':[DecisionTreeClassifier(max_depth=1),DecisionTreeClassifier(max_depth=2)],
+            'multiclfada__estimator__n_estimators':[500],
+            'multiclfada__estimator__learning_rate':[.1,.2]}
+    cv2 = GridSearchCV(pipeline2,parameters)
+    return cv2
 
 def evaluate_model(model, X_test, Y_test, category_names):
     '''
